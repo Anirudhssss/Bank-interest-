@@ -1,0 +1,44 @@
+def calculate_simple_interest(principal, rate, time):
+
+    interest = (principal * rate * time) / 100
+
+    return interest
+
+def is_female():
+
+    gender = input("Are you a female? (Yes/No): ").lower()
+
+    return gender == "yes"
+
+def is_senior_citizen():
+
+    age = int(input("Enter your age: "))
+
+    return age >= 60
+
+def main():
+
+    principal = float(input("Enter the principal amount: "))
+
+    time = float(input("Enter the time period (in years): "))
+
+    rate = 8  # Fixed rate for female senior citizens
+
+    if is_female() and is_senior_citizen():
+
+        interest = calculate_simple_interest(principal, rate, time)
+
+        total_amount = principal + interest
+
+        print("Interest:", interest)
+
+        print("Total Amount:", total_amount)
+
+    else:
+
+        print("Sorry, you are not eligible for the specified interest rate.")
+
+if __name__ == "__main__":
+
+    main()
+
